@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-   
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,9 +30,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                        <span class="fa fa-sign-in"></span> Login
-                    </a>
+                        <a role="button" id="loginButton" class="fa fa-sign-in"><strong>Login</strong></a>
                 </span>
             </div>
         </div>
@@ -78,8 +75,7 @@
         </div>
     </div>
 
-
-    <div id="reservationmodal" class="modal fade" role="dialog">
+    <div id="reservationModal" class="modal fade" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -99,10 +95,10 @@
                                             <label for="radio-one">1 </label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input type="radio" class="form-control" name="number-guests" id="radio-two" />
+                                            <input type="radio" class="form-control" name="number-guests" id="radio-two" checked />
                                             <label for="radio-two"> 2 </label>
                                         </div>
-                                        <div class="form-check form-check-inline active">
+                                        <div class="form-check form-check-inline">
                                             <input type="radio" class="form-control" name="number-guests" id="radio-three" />
                                             <label for="radio-three"> 3 </label>
                                         </div>
@@ -146,10 +142,8 @@
                                     <button type="submit" class="btn btn-secondary">Cancel</button>
                                     <button type="submit" class="btn btn-primary">Reserve</button>
                                 </div>
-                                
                             </form>
                         </div>
-                    
                 </div>
         </div>
       </div>
@@ -167,7 +161,8 @@
                 </div>
                 <div class="col-12 col-sm-3">
                     <br />
-                    <a class="btn btn-block btn-warning btn-lg" data-toggle="modal" data-target="#reservationmodal">Rerserve Table</a>
+                    <!-- <a class="btn btn-block btn-warning btn-lg"  data-toggle="modal" data-target="#reservationmodal"  Reserve Table</a> -->
+                        <button class="btn btn-block btn-warning btn-lg" role="button" id="reservationButton" > Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -342,6 +337,13 @@
                     $('#carouselButton').children('span').addClass('fa-pause');
                 }
             });
+            $('#loginButton').click(function () {
+                $('#loginModal').modal('toggle')
+            })
+            $('#reservationButton').click(function () {
+                $('#reservationModal').modal('toggle')
+            })
+
         })
     </script>
    
